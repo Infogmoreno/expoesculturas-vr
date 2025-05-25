@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio
+          id="click-sound"
+          src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"
+        ></audio>
+
+        <!-- Images. -->
+        <img
+          id="entorno"
+          src="https://cdn.glitch.global/351a1c7a-b630-4639-b89c-a593cc5e96c0/panoramica_CAM_360.jpg?v=1744316873365"
+        />
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#entorno"></a-sky>
+     
+      <!-- Camera + Cursor. -->
+      <a-camera position="0 1 0">
+        <a-cursor
+          id="cursor"
+          animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+          animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+          animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"
+        ></a-cursor>
+        <a-entity id="texto" text="value: Creado por: JoseMaria Moreno_2025; width: 1.2" position="1.1 -1.4 -2.10481"></a-entity>
+      </a-camera>
+    </a-scene>
+   
+  </body>
+</html>
